@@ -1,5 +1,7 @@
 This project was bootstrapped with [Expo](https://docs.expo.dev/).
 
+[Video Demo](https://www.loom.com/share/622c8d03373a48b7bcb87bcfe6db221a)
+
 # Todo App
 
 This project uses:
