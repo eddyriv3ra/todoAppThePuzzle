@@ -1,5 +1,5 @@
 import uuid from "react-native-uuid";
-import { ADD_TODO, CHANGE_TODO } from "../constants";
+import { ADD_TODO, CHANGE_TODO, GET_STORAGE_TODOS } from "../constants";
 
 const initialState = {
   todos: [],
@@ -27,6 +27,10 @@ export const todosReducer = (state = initialState, action: any) => {
       };
     case CHANGE_TODO:
       return updateValue(state, action.value, action.id);
+    case GET_STORAGE_TODOS:
+      return {
+        todos: [...action.todos],
+      };
     default:
       return state;
   }

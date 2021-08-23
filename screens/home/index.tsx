@@ -1,7 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
+import React, { useEffect } from "react";
 import { Platform, ScrollView, StyleSheet, View, Text } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import CheckBox from "@react-native-community/checkbox";
 import Button from "../../components/button";
 import Header from "../../components/header";
@@ -12,7 +13,7 @@ import { Feather } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos } from "../../store/selectors";
-import { changeTodo } from "../../store/actions";
+import { changeTodo, getStorageTodos } from "../../store/actions";
 
 type HomeScreenProp = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -20,6 +21,34 @@ const Home = () => {
   const navigation = useNavigation<HomeScreenProp>();
   const todos = useSelector(getTodos);
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    getTodosFromUserDevice();
+  }, []);
+
+  useEffect(() => {
+    saveTodosToUserDevice(todos);
+  }, [todos]);
+
+  const saveTodosToUserDevice = async (todos: any) => {
+    try {
+      const stringifyTodos = JSON.stringify(todos);
+      await AsyncStorage.setItem("todos", stringifyTodos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getTodosFromUserDevice = async () => {
+    try {
+      const todos = await AsyncStorage.getItem("todos");
+      if (todos !== null) {
+        dispatch(getStorageTodos(JSON.parse(todos)));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const pendingDisplayValues = () => {
     const noTodos = todos.every((todo: any) => todo.completed !== false);
@@ -132,7 +161,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  task: { fontSize: 18, marginLeft: 10, marginBottom: 5 },
+  task: { fontSize: 18, marginLeft: 10, marginBottom: 5, color: "black" },
   tasksContainer: { flexDirection: "row", alignItems: "center" },
   taskTitle: {
     fontSize: 23,
