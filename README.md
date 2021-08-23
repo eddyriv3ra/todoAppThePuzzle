@@ -4,12 +4,12 @@ This project was bootstrapped with [Expo](https://docs.expo.dev/).
 
 This project uses:
 
-React Navigation V6 https://reactnavigation.org/docs/getting-started/
-TypeScript https://www.typescriptlang.org/
-Async Storage https://react-native-async-storage.github.io/async-storage/docs/install/
-Redux https://es.redux.js.org/
-react-native-modal-datetime-picker https://github.com/mmazzarolo/react-native-modal-datetime-picker
-react-native-picker-select https://github.com/lawnstarter/react-native-picker-select
+- [React Navigation V6] https://reactnavigation.org/docs/getting-started/
+- [TypeScript] https://www.typescriptlang.org/
+- [Async Storage] https://react-native-async-storage.github.io/async-storage/docs/install/
+- [Redux] https://es.redux.js.org/
+- [react-native-modal-datetime-picker] https://github.com/mmazzarolo/react-native-modal-datetime-picker
+- [react-native-picker-select] https://github.com/lawnstarter/react-native-picker-select
 
 ### Installation
 
@@ -36,6 +36,7 @@ yarn install
 
 Install ios dependencides
 
+```
 cd ios
 pod install
 
@@ -49,6 +50,8 @@ To run the app you will need IOS and Android simulator
 
 yarn run ios
 yarn run android
+
+```
 
 ```
 
