@@ -6,12 +6,13 @@ const initialState = {
 };
 
 const updateValue = (state: any, value: boolean, id: string) => {
-  const todo = state.todos.find((todo: any) => {
+  const stateCopy = [...state.todos];
+  const todo = stateCopy.find((todo: any) => {
     return todo.id === id;
   });
   todo.completed = value;
   return {
-    todos: [...state.todos],
+    todos: [...stateCopy],
   };
 };
 
