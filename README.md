@@ -1,7 +1,9 @@
 This project was bootstrapped with [Expo](https://docs.expo.dev/).
 
 <div align="center">
-<iframe width="346" height="720" src="https://www.loom.com/embed/622c8d03373a48b7bcb87bcfe6db221a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<a href="https://www.loom.com/share/622c8d03373a48b7bcb87bcfe6db221a">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/622c8d03373a48b7bcb87bcfe6db221a-with-play.gif">
+  </a>
 </div>
 
 # Todo App
