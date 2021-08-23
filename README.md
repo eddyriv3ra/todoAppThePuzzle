@@ -1,11 +1,5 @@
 This project was bootstrapped with [Expo](https://docs.expo.dev/).
 
-<div align="center">
-<a href="https://www.loom.com/share/622c8d03373a48b7bcb87bcfe6db221a">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/622c8d03373a48b7bcb87bcfe6db221a-with-play.gif">
-  </a>
-</div>
-
 # Todo App
 
 This project uses:
